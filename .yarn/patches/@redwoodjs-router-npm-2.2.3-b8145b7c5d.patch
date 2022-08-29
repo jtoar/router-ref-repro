@@ -1,0 +1,57 @@
+diff --git a/dist/util.js b/dist/util.js
+index 18a33a51ff1453a51313764ca957fb059dbb8154..1613e77813b53e784d720557304f14dc6b8eea76 100644
+--- a/dist/util.js
++++ b/dist/util.js
+@@ -29,6 +29,8 @@ var _reduce = _interopRequireDefault(require("@babel/runtime-corejs3/core-js/ins
+ 
+ var _urlSearchParams = _interopRequireDefault(require("@babel/runtime-corejs3/core-js/url-search-params"));
+ 
++var _entries = _interopRequireDefault(require("@babel/runtime-corejs3/core-js/object/entries"));
++
+ var _keys = _interopRequireDefault(require("@babel/runtime-corejs3/core-js/instance/keys"));
+ 
+ var _startsWith = _interopRequireDefault(require("@babel/runtime-corejs3/core-js/instance/starts-with"));
+@@ -47,8 +49,6 @@ var _includes = _interopRequireDefault(require("@babel/runtime-corejs3/core-js/i
+ 
+ var _flatMap = _interopRequireDefault(require("@babel/runtime-corejs3/core-js/instance/flat-map"));
+ 
+-var _entries = _interopRequireDefault(require("@babel/runtime-corejs3/core-js/object/entries"));
+-
+ var _react = _interopRequireWildcard(require("react"));
+ 
+ /** Create a React Context with the given name. */
+@@ -215,19 +215,31 @@ const parseSearch = search => {
+   var _context3;
+ 
+   const searchParams = new _urlSearchParams.default(search);
++
++  for (const [reservedName, altName] of (0, _entries.default)(reservedSearchParams)) {
++    if (searchParams.has(reservedName)) {
++      // If we're in here, we've narrowed that `searchParams` has `reservedName`
++      // but TS doesn't seem to know that. So, casting:
++      searchParams.set(altName, searchParams.get(reservedName));
++      searchParams.delete(reservedName);
++    }
++  }
++
+   return (0, _reduce.default)(_context3 = [...(0, _keys.default)(searchParams).call(searchParams)]).call(_context3, (params, key) => ({ ...params,
+     [key]: searchParams.get(key)
+   }), {});
+ };
++
++exports.parseSearch = parseSearch;
++const reservedSearchParams = {
++  ref: 'referrer'
++};
+ /**
+  * Validate a path to make sure it follows the router's rules. If any problems
+  * are found, a descriptive Error will be thrown, as problems with routes are
+  * critical enough to be considered fatal.
+  */
+ 
+-
+-exports.parseSearch = parseSearch;
+-
+ const validatePath = path => {
+   // Check that path begins with a slash.
+   if (!(0, _startsWith.default)(path).call(path, '/')) {

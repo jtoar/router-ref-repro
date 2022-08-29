@@ -3685,7 +3685,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@redwoodjs/api@npm:2.2.3, @redwoodjs/api@npm:^2.2.3":
+"@redwoodjs/api@npm:2.2.3":
   version: 2.2.3
   resolution: "@redwoodjs/api@npm:2.2.3"
   dependencies:
@@ -3780,7 +3780,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@redwoodjs/core@npm:^2.2.3":
+"@redwoodjs/core@npm:2.2.3":
   version: 2.2.3
   resolution: "@redwoodjs/core@npm:2.2.3"
   dependencies:
@@ -3878,7 +3878,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@redwoodjs/forms@npm:^2.2.3":
+"@redwoodjs/forms@npm:2.2.3":
   version: 2.2.3
   resolution: "@redwoodjs/forms@npm:2.2.3"
   dependencies:
@@ -3893,7 +3893,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@redwoodjs/graphql-server@npm:2.2.3, @redwoodjs/graphql-server@npm:^2.2.3":
+"@redwoodjs/graphql-server@npm:2.2.3":
   version: 2.2.3
   resolution: "@redwoodjs/graphql-server@npm:2.2.3"
   dependencies:
@@ -3984,7 +3984,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@redwoodjs/router@npm:2.2.3, @redwoodjs/router@npm:^2.2.3":
+"@redwoodjs/router@npm:2.2.3":
   version: 2.2.3
   resolution: "@redwoodjs/router@npm:2.2.3"
   dependencies:
@@ -3994,6 +3994,19 @@ __metadata:
     core-js: 3.23.5
     lodash.isequal: 4.5.0
   checksum: 1e86eaccc2d225cb231eee3550e7f6f6c0755ebf4fdad9d331f44250566353169c23a39469ab397cc8d4b1affa282065c24b9bf40b2617121181e4e753f77f49
+  languageName: node
+  linkType: hard
+
+"@redwoodjs/router@patch:@redwoodjs/router@npm:2.2.3#.yarn/patches/@redwoodjs-router-npm-2.2.3-b8145b7c5d.patch::locator=root-workspace-0b6124%40workspace%3A.":
+  version: 2.2.3
+  resolution: "@redwoodjs/router@patch:@redwoodjs/router@npm%3A2.2.3#.yarn/patches/@redwoodjs-router-npm-2.2.3-b8145b7c5d.patch::version=2.2.3&hash=70b914&locator=root-workspace-0b6124%40workspace%3A."
+  dependencies:
+    "@babel/runtime-corejs3": 7.16.7
+    "@reach/skip-nav": 0.16.0
+    "@redwoodjs/auth": 2.2.3
+    core-js: 3.23.5
+    lodash.isequal: 4.5.0
+  checksum: 8220ea0f35baadf646d1939ce13441ca7f218ebc82a3a57995aded7c146796863d27c462f08bceb7f37c91f7b71a10339f982db3451e468c44ed5bb8b33d035e
   languageName: node
   linkType: hard
 
@@ -4085,7 +4098,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@redwoodjs/web@npm:2.2.3, @redwoodjs/web@npm:^2.2.3":
+"@redwoodjs/web@npm:2.2.3":
   version: 2.2.3
   resolution: "@redwoodjs/web@npm:2.2.3"
   dependencies:
@@ -7307,8 +7320,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "api@workspace:api"
   dependencies:
-    "@redwoodjs/api": ^2.2.3
-    "@redwoodjs/graphql-server": ^2.2.3
+    "@redwoodjs/api": 2.2.3
+    "@redwoodjs/graphql-server": 2.2.3
   languageName: unknown
   linkType: soft
 
@@ -20700,7 +20713,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "root-workspace-0b6124@workspace:."
   dependencies:
-    "@redwoodjs/core": ^2.2.3
+    "@redwoodjs/core": 2.2.3
   languageName: unknown
   linkType: soft
 
@@ -23707,9 +23720,9 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "web@workspace:web"
   dependencies:
-    "@redwoodjs/forms": ^2.2.3
-    "@redwoodjs/router": ^2.2.3
-    "@redwoodjs/web": ^2.2.3
+    "@redwoodjs/forms": 2.2.3
+    "@redwoodjs/router": 2.2.3
+    "@redwoodjs/web": 2.2.3
     prop-types: 15.8.1
     react: 17.0.2
     react-dom: 17.0.2
